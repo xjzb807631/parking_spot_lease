@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:text="账号"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="30dp"
+        android:textSize="25sp"
+        android:id="@+id/account_number" />
+    <EditText
+        android:layout_marginTop="30dp"
+        android:layout_width="180dp"
+        android:layout_marginLeft="150dp"
+        android:layout_height="40dp"
+        android:id="@+id/edit_account_number"
+        android:background="@drawable/input_box"/>
+
+    <TextView
+        android:text="密码"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="100dp"
+        android:textSize="25sp"
+        android:id="@+id/password" />
+    <EditText
+        android:layout_marginTop="100dp"
+        android:layout_width="180dp"
+        android:layout_marginLeft="150dp"
+        android:layout_height="40dp"
+        android:id="@+id/edit_password"
+        android:background="@drawable/input_box"/>
+
+    <TextView
+        android:text="确认密码"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="170dp"
+        android:layout_marginLeft="15dp"
+        android:textSize="25sp"
+        android:id="@+id/password_confirm" />
+    <EditText
+        android:layout_marginTop="170dp"
+        android:layout_width="180dp"
+        android:layout_marginLeft="150dp"
+        android:layout_height="40dp"
+        android:id="@+id/edit_password_confirm"
+        android:background="@drawable/input_box"/>
+
+    <TextView
+        android:text="昵称"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="240dp"
+        android:layout_marginLeft="15dp"
+        android:textSize="25sp"
+        android:id="@+id/nickname" />
+    <EditText
+        android:layout_marginTop="240dp"
+        android:layout_width="180dp"
+        android:layout_marginLeft="150dp"
+        android:layout_height="40dp"
+        android:id="@+id/edit_nickname"
+        android:background="@drawable/input_box"/>
+
+    <TextView
+        android:text="真实姓名"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="310dp"
+        android:textSize="25sp"
+        android:id="@+id/realname" />
+    <EditText
+        android:layout_marginTop="310dp"
+        android:layout_width="180dp"
+        android:layout_marginLeft="150dp"
+        android:layout_height="40dp"
+        android:id="@+id/edit_realname"
+        android:background="@drawable/input_box"/>
+
+    <TextView
+    android:text="身份证号"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="15dp"
+    android:layout_marginTop="380dp"
+        android:textSize="25sp"
+    android:id="@+id/id_number" />
+    <EditText
+        android:layout_marginTop="380dp"
+        android:layout_width="180dp"
+        android:layout_marginLeft="150dp"
+        android:layout_height="40dp"
+        android:id="@+id/edit_id_number"
+        android:background="@drawable/input_box"/>
+
+    <Button
+        android:text="取消"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="12dp"
+        android:layout_marginEnd="12dp"
+        android:textSize="25sp"
+        android:id="@+id/cancel"
+        android:layout_below="@+id/edit_id_number"
+        android:layout_alignRight="@+id/edit_id_number"
+        android:layout_alignEnd="@+id/edit_id_number"
+        android:layout_marginTop="20dp" />
+
+    <Button
+    android:text="确认"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+        android:textSize="25sp"
+    android:id="@+id/confirm"
+        android:layout_alignBaseline="@+id/cancel"
+        android:layout_alignBottom="@+id/cancel"
+        android:layout_alignLeft="@+id/id_number"
+        android:layout_alignStart="@+id/id_number"
+        android:layout_marginLeft="26dp"
+        android:layout_marginStart="26dp" />
+
+
+</RelativeLayout>
