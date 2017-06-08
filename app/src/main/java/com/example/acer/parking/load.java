@@ -51,7 +51,7 @@ public class load extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user);
+        setContentView(R.layout.activity_load);
         mAccount = (EditText) findViewById(R.id.edit_user_id);
         mPwd = (EditText) findViewById(R.id.edit_user_password);
         Button mRegisterButton = (Button) findViewById(R.id.register);

@@ -11,6 +11,7 @@ public class order extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
 
-        Button mRenting_out_button=(Button) findViewById()
+        //// TODO: 2017/6/8  
+        // Button mRenting_out_button=(Button) findViewById();
     }
 }

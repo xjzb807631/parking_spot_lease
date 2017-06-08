@@ -35,7 +35,7 @@ public class searching extends AppCompatActivity {
             public void onClick(View v)
             {
                 ClientSpotHandler clientSpotHandler=new ClientSpotHandler();
-                clientSpotHandler.searchAreaByDistrict(provinceName,districtPwd,1,null);
+               // clientSpotHandler.searchAreaByDistrict(provinceName,districtPwd,1,null);
                 Intent intent_searching_to_parking_place = new Intent(searching.this,parking_place.class) ;
                 startActivity(intent_searching_to_parking_place);
             }
