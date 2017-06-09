@@ -13,7 +13,6 @@ public class MainHandler {
 	int new_area_id;
 	public void start()
 	{
-		//开新线程用来监听用户发来的车位有关信息
 		new Thread(new Runnable() {  
             public void run() {
             	try {
@@ -26,7 +25,6 @@ public class MainHandler {
         				invoke(socket);
         			}
         		} catch (IOException e) {
-        			// TODO Auto-generated catch block
         			e.printStackTrace();
         		}
             }
@@ -42,7 +40,6 @@ public class MainHandler {
 	            	try {
 	        			request=(MainRequest)in.readObject();
 	        		} catch (ClassNotFoundException e) {
-	        			// TODO Auto-generated catch block
 	        			e.printStackTrace();
 	        		}
 	            	if (request!=null&&request.equals(MainRequest.CreateOffer))
@@ -57,8 +54,11 @@ public class MainHandler {
 	            	{
 	            		createProposal(socket);
 	            	}
+					if (request!=null&&request.equals(MainRequest.SearchAvailableSpotByArea))
+					{
+						searchAvailableSpotByArea(socket);
+					}
             	} catch (IOException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
             }
@@ -128,25 +128,21 @@ public class MainHandler {
 		try {
 			Statement stat=null;
 			stat=conn.createStatement();
-			String amountString;
 			if (!timeInRange(proposal))
 			{
 				out.writeObject("Time out of range");
 				stat.close();
 				return;
 			}
-			if (proposal.amount!=0)
-				amountString="\'"+proposal.amount+"\'";
-			else
-				amountString="NULL";
+
 			
 			String sql=
 					"insert parking_lease.order(datetime_begin,datetime_end,spot_id,amount,state,lessee,refOrder) values("+
 						"\'"+proposal.datetimeBegin.toString()+"\'"+","+
 						"\'"+proposal.datetimeEnd.toString()+"\'"+","+
 						proposal.spot+","+
-						amountString+
-						",\'Proposal\',"+proposal.lessee+","+
+						proposal.amount+","+
+						"\'Proposal\',"+proposal.lessee+","+
 						proposal.refOrder+
 							");";
 			if (!stat.execute(sql))
@@ -168,7 +164,7 @@ public class MainHandler {
 		}
 	}
 	
-	private void searchSpotByArea(Socket socket)
+	private void searchAvailableSpotByArea(Socket socket)
 	{
 		try{
 			int areaid=in.readInt();
@@ -179,21 +175,28 @@ public class MainHandler {
 			try {
 				stat=conn.createStatement();
 				String sql=
-						"select * from parking_lease.spot where area_id="+areaid+";";
+						"select * from parking_lease.spot natural join parking_lease.order where area_id="+areaid+" and " +
+								" parking_lease.order.state=\'Offer\'and " +
+								"datetime_begin <= "+from.toString()+"and " +
+								"datetime_end >= "+to.toString()+";";
 				resultSet=stat.executeQuery(sql);
 				System.out.println(sql);
-				int num=0;							//共发送多少条记录
+				int num=0;
 				
 					while (resultSet.next())
 					{
-						Spot res=new Spot(resultSet.getInt("user_id"),
+						Spot spotRes=new Spot(resultSet.getInt("user_id"),
 								areaid,
 								resultSet.getString("spot_local_ref"),
 								resultSet.getString("description"),
 								resultSet.getString("category"),
 								resultSet.getString("size"));
+						Order offerRes=new Order(resultSet.getTimestamp("datetime_begin"),
+								resultSet.getTimestamp("datetime_end"),
+								resultSet.getInt("spot_id"),
+								resultSet.getFloat("amount"));
 						out.writeObject(QueryResult.Success);
-						out.writeObject(res);
+						out.writeObject(spotRes);
 						num++;
 					}
 					if (num==0)

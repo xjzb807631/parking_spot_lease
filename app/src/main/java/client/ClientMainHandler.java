@@ -1,10 +1,13 @@
 package client;
+import android.util.Pair;
+
 import java.io.BufferedInputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
 import server.SpotHandler;
@@ -14,7 +17,6 @@ public class ClientMainHandler {
 	{
 		Socket socket=null;
 		NetworkResult networkResult=NetworkResult.Success;
-		//先发送login请求，然后立即发送数据
 		try {
 			socket=new Socket(InetAddress.getLocalHost(),server.MainHandler.port);
 			ObjectOutputStream os=new ObjectOutputStream(socket.getOutputStream());
@@ -35,7 +37,6 @@ public class ClientMainHandler {
 	public NetworkResult removeOrderById(int id,StringBuffer result){
 		Socket socket=null;
 		NetworkResult networkResult=NetworkResult.Success;
-		//先发送login请求，然后立即发送数据
 		try {
 			socket=new Socket(InetAddress.getLocalHost(),server.MainHandler.port);
 			ObjectOutputStream os=new ObjectOutputStream(socket.getOutputStream());
@@ -59,7 +60,6 @@ public class ClientMainHandler {
 	{
 		Socket socket=null;
 		NetworkResult networkResult=NetworkResult.Success;
-		//先发送login请求，然后立即发送数据
 		try {
 			socket=new Socket(InetAddress.getLocalHost(),server.MainHandler.port);
 			ObjectOutputStream os=new ObjectOutputStream(socket.getOutputStream());
@@ -77,12 +77,11 @@ public class ClientMainHandler {
 		return networkResult;
 	}
 	
-	public NetworkResult searchAvailableSpot(int areaid,Timestamp from,Timestamp to, List<Spot> spots,StringBuffer result)
+	public NetworkResult searchAvailableSpot(int areaid, Timestamp from, Timestamp to, List<Pair<Spot,Order>> res, StringBuffer result)
 	{
-		spots.clear();
+		res.clear();
 		Socket socket=null;
 		NetworkResult networkResult=NetworkResult.Success;
-		//先发送login请求，然后立即发送数据
 		try {
 			socket=new Socket(InetAddress.getLocalHost(),server.SpotHandler.port);
 			ObjectOutputStream os=new ObjectOutputStream(socket.getOutputStream());
@@ -104,7 +103,9 @@ public class ClientMainHandler {
 			}
 			while (queryResult.equals(QueryResult.Success))
 			{
-				spots.add((Spot)is.readObject());
+				Spot spot=(Spot)is.readObject();
+				Order order=(Order)is.readObject();
+				res.add(new Pair<Spot,Order>(spot,order));
 				queryResult=(QueryResult)is.readObject();
 				if (queryResult.equals(QueryResult.Error))
 				{
@@ -154,6 +155,15 @@ public class ClientMainHandler {
 		NetworkResult networkResult=clientMainHandler.createProposal(proposal1, result);
 		System.out.println(networkResult);
 		System.out.println(result);
+	}
+	private static void searchDistrictsByCityTest()
+	{
+		ClientMainHandler clientMainHandler=new ClientMainHandler();
+		StringBuffer result=new StringBuffer();
+		List<Pair<Spot,Order>> res=new ArrayList<Pair<Spot,Order>>();
+		NetworkResult networkResult=clientMainHandler.searchAvailableSpot(10003,new Timestamp(171,6,24,3,5,5,24),new Timestamp(171,6,24,3,5,9,0),res,result);
+		System.out.println(result);
+		System.out.println(res.get(0));
 	}
 	public static void main(String argv[])
 	{

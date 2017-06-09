@@ -13,7 +13,6 @@ public class SpotHandler {
 	int new_area_id;
 	public void start()
 	{
-		//开新线程用来监听用户发来的车位有关信息
 		new Thread(new Runnable() {  
             public void run() {
             	try {
@@ -94,10 +93,10 @@ private void InsertArea(Socket socket)
 		e.printStackTrace();
 	}
 	try {
-		//前端保证输入合法，直接插入
+		//???????????????????
 		Statement stat=null;
 		stat=conn.createStatement();
-		//插入记录
+		//??????
 		String propertyString;
 		if (area.property_contact!=null)
 			propertyString="\'"+area.property_contact+"\'";
@@ -136,14 +135,11 @@ private void InsertSpot(Socket socket)
 		e.printStackTrace();
 	}
 	try {
-		//前端保证输入合法，直接插入
 		Statement stat=null;
 		stat=conn.createStatement();
-		//检测是否存在
 		String sql="select * from parking_lease.spot where spot_local_ref="+
 		"\'"+spot.spot_local_ref+"\'"+" and area_id="+
 		"\'"+spot.area+"\';";
-		//插入记录
 		ResultSet resultSet=stat.executeQuery(sql);
 		if (resultSet.next())
 		{
@@ -188,12 +184,12 @@ private void InsertSpot(Socket socket)
 		System.out.print(e.getMessage());
 	}
 }
-/*	每次发送10条记录
-	接收：	district所在区
-			start记录偏移量
-	发送：	如果没有记录，发送notfound，
-			如果有，每一条先发success，再发area，
-			最后发end表示停止
+/*	??η???10?????
+	?????	district??????
+			start????????
+	?????	?????м????????notfound??
+			????У????????success?????area??
+			???end?????
 */
 public void searchAreaByDistrict(Socket socket)
 {
@@ -209,7 +205,7 @@ public void searchAreaByDistrict(Socket socket)
 					"select * from parking_lease.area where district=\'"+district+"\' limit "+start+",10;";
 			resultSet=stat.executeQuery(sql);
 			System.out.println(sql);
-			int num=0;							//共发送多少条记录
+			int num=0;							//??????????????
 			
 				while (resultSet.next())
 				{
@@ -256,7 +252,7 @@ public void searchCitiesByProvince(Socket socket)
 					"select * from parking_lease.city where province=\'"+province+";";
 			resultSet=stat.executeQuery(sql);
 			System.out.println(sql);
-			int num=0;							//共发送多少条记录
+			int num=0;							//??????????????
 			
 				while (resultSet.next())
 				{
@@ -300,7 +296,7 @@ public void searchDistrictsByCity(Socket socket)
 					"select * from parking_lease.district where city=\'"+city+";";
 			resultSet=stat.executeQuery(sql);
 			System.out.println(sql);
-			int num=0;							//共发送多少条记录
+			int num=0;							//??????????????
 			
 				while (resultSet.next())
 				{
@@ -345,7 +341,7 @@ private void getSpotByUser(Socket socket)
 					"select * from parking_lease.spot where user_id="+userid+";";
 			resultSet=stat.executeQuery(sql);
 			System.out.println(sql);
-			int num=0;							//共发送多少条记录
+			int num=0;							//??????????????
 			
 				while (resultSet.next())
 				{
@@ -395,7 +391,7 @@ private void searchSpotByArea(Socket socket)
 					"select * from parking_lease.spot where area_id="+areaid+";";
 			resultSet=stat.executeQuery(sql);
 			System.out.println(sql);
-			int num=0;							//共发送多少条记录
+			int num=0;							//??????????????
 			
 				while (resultSet.next())
 				{
@@ -435,14 +431,14 @@ private void searchSpotByArea(Socket socket)
 private void InsertSpot(Socket socket)
 {
 	Spot spot=null;
-	//得到account
+	//???account
 	try {
 		spot=(Spot)in.readObject();
 	} catch (Exception e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
-	//查手机号是否已存在
+	//???????????????
 	try {
     	if (getUser(user.cellphone)!=null)
     	{
@@ -452,7 +448,7 @@ private void InsertSpot(Socket socket)
     	ResultSet resultSet=null;
 		Statement stat=null;
 		stat=conn.createStatement();
-		//查身份证号是否重复
+		//??????????????
 		String sql=
 				"select * from parking_lease.user where identity_number=\'"+user.identity_number+"\';";
 		resultSet=stat.executeQuery(sql);
@@ -463,7 +459,7 @@ private void InsertSpot(Socket socket)
 			stat.close();
     		return;
 		}
-		//用户信息合法，插入记录
+		//?????????????????
 		sql=
 				"insert parking_lease.user(nickname,identity_number,cellphone,password,realname) values("+
 					"\'"+user.nickname+"\'"+","+

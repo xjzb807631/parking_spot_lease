@@ -15,7 +15,7 @@ public class ClientSpotHandler {
 	{
 		Socket socket=null;
 		NetworkResult networkResult=NetworkResult.Success;
-		//先发送login请求，然后立即发送数据
+		//锟饺凤拷锟斤拷login锟斤拷锟斤拷然锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷
 		try {
 			socket=new Socket(InetAddress.getLocalHost(),server.SpotHandler.port);
 			ObjectOutputStream os=new ObjectOutputStream(socket.getOutputStream());
@@ -36,7 +36,7 @@ public class ClientSpotHandler {
 	{
 		Socket socket=null;
 		NetworkResult networkResult=NetworkResult.Success;
-		//先发送login请求，然后立即发送数据
+		//锟饺凤拷锟斤拷login锟斤拷锟斤拷然锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷
 		try {
 			socket=new Socket(InetAddress.getLocalHost(),server.SpotHandler.port);
 			ObjectOutputStream os=new ObjectOutputStream(socket.getOutputStream());
@@ -58,7 +58,6 @@ public class ClientSpotHandler {
 		areas.clear();
 		Socket socket=null;
 		NetworkResult networkResult=NetworkResult.Success;
-		//先发送login请求，然后立即发送数据
 		try {
 			socket=new Socket(InetAddress.getLocalHost(),server.SpotHandler.port);
 			ObjectOutputStream os=new ObjectOutputStream(socket.getOutputStream());
@@ -108,7 +107,6 @@ public class ClientSpotHandler {
 		cities.clear();
 		Socket socket=null;
 		NetworkResult networkResult=NetworkResult.Success;
-		//先发送login请求，然后立即发送数据
 		try {
 			socket=new Socket(InetAddress.getLocalHost(),server.SpotHandler.port);
 			ObjectOutputStream os=new ObjectOutputStream(socket.getOutputStream());
@@ -157,7 +155,6 @@ public class ClientSpotHandler {
 		districts.clear();
 		Socket socket=null;
 		NetworkResult networkResult=NetworkResult.Success;
-		//先发送login请求，然后立即发送数据
 		try {
 			socket=new Socket(InetAddress.getLocalHost(),server.SpotHandler.port);
 			ObjectOutputStream os=new ObjectOutputStream(socket.getOutputStream());
@@ -206,7 +203,6 @@ public class ClientSpotHandler {
 		spots.clear();
 		Socket socket=null;
 		NetworkResult networkResult=NetworkResult.Success;
-		//先发送login请求，然后立即发送数据
 		try {
 			socket=new Socket(InetAddress.getLocalHost(),server.SpotHandler.port);
 			ObjectOutputStream os=new ObjectOutputStream(socket.getOutputStream());
@@ -255,7 +251,6 @@ public class ClientSpotHandler {
 		spots.clear();
 		Socket socket=null;
 		NetworkResult networkResult=NetworkResult.Success;
-		//先发送login请求，然后立即发送数据
 		try {
 			socket=new Socket(InetAddress.getLocalHost(),server.SpotHandler.port);
 			ObjectOutputStream os=new ObjectOutputStream(socket.getOutputStream());
@@ -299,7 +294,7 @@ public class ClientSpotHandler {
 		}
 		return networkResult;
 	}
-	public static void insertSpotTest()
+	private static void insertSpotTest()
 	{
 		Spot spot=new Spot(10003,1,"101","no description","outside","large");
 		ClientSpotHandler clientSpotHandler=new ClientSpotHandler();
@@ -347,12 +342,8 @@ public class ClientSpotHandler {
 		System.out.println(result);
 		System.out.println(districts.get(1));
 	}
-	static void insertShanghaiArea()
-	{
-		String city="上海市";
-	}
 	public static void main(String argv[])
 	{
-		searchSpotsByAreaidTest();
+		searchDistrictsByCityTest();
 	}
 }
