@@ -1,5 +1,3 @@
-import android.widget.EditText;
-
 import java.io.Serializable;
 
 import data.Account;
