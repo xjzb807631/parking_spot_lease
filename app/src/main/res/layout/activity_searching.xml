@@ -16,7 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="440dp"
         android:id="@+id/confirm" />
 
     <Button
@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="200dp"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="440dp"
         android:id="@+id/cancel" />
 
     <TextView
@@ -35,12 +35,12 @@
         android:layout_marginLeft="25dp"
         android:textSize="25sp"
         android:id="@+id/province" />
-    <EditText
+    <Spinner
         android:layout_marginTop="50dp"
-        android:layout_width="180dp"
-        android:layout_marginLeft="80dp"
+        android:layout_width="150dp"
+        android:layout_marginLeft="160dp"
         android:layout_height="40dp"
-        android:id="@+id/edit_province"
+        android:id="@+id/province_spinner"
         android:background="@drawable/input_box"/>
 
     <TextView
@@ -51,11 +51,77 @@
         android:layout_marginLeft="25dp"
         android:textSize="25sp"
         android:id="@+id/district" />
-    <EditText
+    <Spinner
         android:layout_marginTop="130dp"
-        android:layout_width="180dp"
-        android:layout_marginLeft="80dp"
+        android:layout_width="120dp"
         android:layout_height="40dp"
-        android:id="@+id/edit_district"
-        android:background="@drawable/input_box"/>
+        android:id="@+id/district_spinner"
+        android:background="@drawable/input_box"
+        android:layout_alignLeft="@+id/province_spinner"
+        android:layout_alignStart="@+id/province_spinner"
+        android:layout_alignRight="@+id/province_spinner"
+        android:layout_alignEnd="@+id/province_spinner" />
+
+    <TextView
+        android:text="起始时间"
+        android:textSize="25sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="290dp"
+        android:id="@+id/start_time" />
+
+    <TextView
+        android:text="结束时间"
+        android:textSize="25sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="370dp"
+        android:id="@+id/stop_time" />
+
+    <Spinner
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:inputType="time"
+        android:layout_marginTop="290dp"
+        android:id="@+id/start_time_spinner"
+        android:background="@drawable/input_box"
+        android:layout_alignRight="@+id/district_spinner"
+        android:layout_alignEnd="@+id/district_spinner"
+        android:layout_alignLeft="@+id/district_spinner"
+        android:layout_alignStart="@+id/district_spinner" />
+
+    <Spinner
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:inputType="time"
+        android:layout_marginTop="370dp"
+        android:id="@+id/stop_time_spinner"
+        android:background="@drawable/input_box"
+        android:layout_alignRight="@+id/start_time_spinner"
+        android:layout_alignEnd="@+id/start_time_spinner"
+        android:layout_alignLeft="@+id/start_time_spinner"
+        android:layout_alignStart="@+id/start_time_spinner" />
+
+    <TextView
+        android:text="小区名"
+        android:textSize="25sp"
+        android:layout_marginTop="210dp"
+        android:layout_marginLeft="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/block_name" />
+
+    <Spinner
+        android:layout_marginTop="210dp"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:background="@drawable/input_box"
+        android:id="@+id/block_name_spinner"
+        android:layout_alignRight="@+id/start_time_spinner"
+        android:layout_alignEnd="@+id/start_time_spinner"
+        android:layout_alignLeft="@+id/start_time_spinner"
+        android:layout_alignStart="@+id/start_time_spinner" />
+
 </RelativeLayout>

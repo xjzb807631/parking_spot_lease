@@ -22,9 +22,6 @@ public class load extends AppCompatActivity
     private EditText mAccount;                        //用户名编辑
     private EditText mPwd;                            //密码编辑
 
-
-
-
     void doPost_Login()
     {
         String userName = mAccount.getText().toString().trim();    //获取当前输入的用户名和密码信息

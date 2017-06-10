@@ -63,7 +63,7 @@
         android:layout_width="180dp"
         android:layout_marginLeft="150dp"
         android:layout_height="40dp"
-        android:id="@+id/edit_nickname"
+        android:id="@+id/edit_nick_name"
         android:background="@drawable/input_box"/>
 
     <TextView
@@ -79,7 +79,7 @@
         android:layout_width="180dp"
         android:layout_marginLeft="150dp"
         android:layout_height="40dp"
-        android:id="@+id/edit_realname"
+        android:id="@+id/edit_real_name"
         android:background="@drawable/input_box"/>
 
     <TextView

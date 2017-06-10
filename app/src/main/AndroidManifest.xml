@@ -23,7 +23,9 @@
         <activity android:name=".license_plate" />
         <activity android:name=".parking_place" />
         <activity android:name=".searching" />
-        <activity android:name=".user"></activity>
+        <activity android:name=".user" />
+        <activity android:name=".renting_in_order" />
+        <activity android:name=".renting_out_order"></activity>
     </application>
 
 </manifest>
