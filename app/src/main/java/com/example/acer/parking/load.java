@@ -50,6 +50,7 @@ public class load extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+        System.out.flush();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_load);
         mAccount = (EditText) findViewById(R.id.edit_user_id);
