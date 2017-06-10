@@ -5,14 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.content.SharedPreferences;
-import android.view.*;
-import android.widget.TextView;
-import android.widget.ImageView;
 import android.content.Intent;
-import android.view.View.OnClickListener;
-import android.widget.Toast;
+
 import data.*;
 import client.*;
 
