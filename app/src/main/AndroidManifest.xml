@@ -33,7 +33,7 @@
         <activity android:name=".creating_proposal" />
         <activity android:name=".inserting_offer" />
         <activity android:name=".inserting_proposal" />
-        <activity android:name=".offer_or_proposal"></activity>
+        <activity android:name=".offer_or_proposal" />
     </application>
 
 </manifest>

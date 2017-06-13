@@ -11,13 +11,13 @@ public class offer_or_proposal extends AppCompatActivity {
     Button proposal_button;
     void doPost_create_offer()
     {
-        Intent intent_offer_or_proposal_to_creating_offer=new Intent(offer_or_proposal.this,inserting_offer.class);
-        startActivity(intent_offer_or_proposal_to_creating_offer);
+        Intent intent_offer_or_proposal_to_inserting_offer=new Intent(offer_or_proposal.this,inserting_offer.class);
+        startActivity(intent_offer_or_proposal_to_inserting_offer);
     }
     void doPost_create_proposal()
     {
-        Intent intent_offer_or_proposal_to_creating_proposal=new Intent(offer_or_proposal.this,creating_proposal.class);
-        startActivity(intent_offer_or_proposal_to_creating_proposal);
+        Intent intent_offer_or_proposal_to_inserting_proposal=new Intent(offer_or_proposal.this,creating_proposal.class);
+        startActivity(intent_offer_or_proposal_to_inserting_proposal);
     }
 
     @Override
