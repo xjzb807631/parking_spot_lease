@@ -7,6 +7,7 @@ import android.widget.EditText;
 import android.widget.Button;
 import android.view.View;
 import android.content.Intent;
+import android.widget.ListView;
 import android.widget.Spinner;
 
 import data.*;
@@ -20,6 +21,10 @@ import client.ClientMainHandler;
 import client.ClientSpotHandler;
 
 public class searching extends AppCompatActivity {
+
+    ArrayAdapter<String> adapter;
+    List<String> contactsList=new ArrayList<>();
+    StringBuffer result=new StringBuffer();
 
     private EditText mProvince;
     private EditText mDistrict;
@@ -41,11 +46,29 @@ public class searching extends AppCompatActivity {
 
     void doPost_confirm()
     {
+        String m_province=mProvince.getText().toString().trim();
+        String m_district=mDistrict.getText().toString().trim();
+        String m_block=mBlock.getText().toString().trim();
+        String m_start_time=mStartTime.getText().toString().trim();
+        String m_stop_time=mStopTime.getText().toString().trim();
 
         Area area=new Area();
         ClientMainHandler clientMainHandler=new ClientMainHandler();
         Intent intent_searching_to_parking_place = new Intent(searching.this,parking_place.class) ;
+        intent_searching_to_parking_place.putExtra("m_province",m_province);
+        intent_searching_to_parking_place.putExtra("m_district",m_district);
+        intent_searching_to_parking_place.putExtra("m_block",m_block);
+        intent_searching_to_parking_place.putExtra("m_start_time",m_start_time);
+        intent_searching_to_parking_place.putExtra("m_stop_time",m_stop_time);
         startActivity(intent_searching_to_parking_place);
+
+        Intent intent_searching_to_renting_in_order = new Intent(searching.this,renting_in_order.class) ;
+        intent_searching_to_renting_in_order.putExtra("m_province",m_province);
+        intent_searching_to_renting_in_order.putExtra("m_district",m_district);
+        intent_searching_to_renting_in_order.putExtra("m_block",m_block);
+        intent_searching_to_renting_in_order.putExtra("m_start_time",m_start_time);
+        intent_searching_to_renting_in_order.putExtra("m_stop_time",m_stop_time);
+        startActivity(intent_searching_to_renting_in_order);
     }
     void doPost_cancel()
     {

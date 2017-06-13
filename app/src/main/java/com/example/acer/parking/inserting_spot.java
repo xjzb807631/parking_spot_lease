@@ -1,5 +1,6 @@
 package com.example.acer.parking;
 
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
@@ -18,11 +19,11 @@ public class inserting_spot extends AppCompatActivity {
     private EditText m_spot_local_ref;
     StringBuffer result;
 
-   /* void doPost_comfirm_on_inserting_spot()
+    void doPost_comfirm_on_inserting_spot()
     {
         ClientSpotHandler clientSpotHandler=new ClientSpotHandler();
         clientSpotHandler.insertSpot(spot,result);
-    }*/
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,12 +44,15 @@ public class inserting_spot extends AppCompatActivity {
         String size=m_size.getText().toString().trim();
         String spot_local_ref=m_spot_local_ref.getText().toString().trim();
 
-   //     Spot spot=new Spot(user_name,address,spot_local_ref,description,category,size);
+        SharedPreferences pref=getSharedPreferences("data",MODE_PRIVATE);
+        String userName=pref.getString("userName","");
+
+        Spot spot=new Spot(user_name,address,spot_local_ref,description,category,size);
 
         Button m_confirm_button=(Button) findViewById(R.id.confirm);
         Button m_cancel_button=(Button) findViewById(R.id.cancel);
 
-     //   m_confirm_button.setOnClickListener(view->doPost_confirm_on_inserting_spot());
+        m_confirm_button.setOnClickListener(view->doPost_confirm_on_inserting_spot());
 
     }
 }

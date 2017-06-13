@@ -22,7 +22,7 @@
         <activity android:name=".forget_password" />
         <activity android:name=".order" />
         <activity android:name=".personal_information" />
-        <activity android:name=".license_plate" />
+        <activity android:name=".searching_parking_place" />
         <activity android:name=".parking_place" />
         <activity android:name=".searching" />
         <activity android:name=".user" />

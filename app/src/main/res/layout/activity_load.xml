@@ -10,6 +10,7 @@
         android:orientation="vertical">
         <TextView
             android:text="用户名"
+            android:inputType="number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/user_id"
@@ -47,6 +48,7 @@
 
         <TextView
             android:text="密码"
+            android:inputType="numberPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
