@@ -53,6 +53,7 @@
         android:id="@+id/offer_price" />
     <EditText
         android:layout_marginTop="190dp"
+        android:inputType="number"
         android:layout_width="180dp"
         android:layout_marginLeft="150dp"
         android:layout_height="40dp"
@@ -78,19 +79,5 @@
         android:layout_marginRight="48dp"
         android:layout_marginEnd="48dp" />
 
-    <TextView
-        android:text="车位id"
-        android:textSize="25sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="260dp"
-        android:layout_marginLeft="25dp"
-        android:id="@+id/spot_id" />
-    <EditText
-        android:layout_marginTop="260dp"
-        android:layout_width="180dp"
-        android:layout_marginLeft="150dp"
-        android:layout_height="40dp"
-        android:id="@+id/edit_spot_id"
-        android:background="@drawable/input_box"/>
+
 </RelativeLayout>

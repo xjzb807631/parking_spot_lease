@@ -34,6 +34,6 @@ public class searching_parking_place extends AppCompatActivity {
         adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,contactsList);
         contactsView.setAdapter(adapter);
         ClientMainHandler clientMainHandler=new ClientMainHandler();
-        clientMainHandler.searchAvailableSpot();
+      //todo  clientMainHandler.searchAvailableSpot();
     }
 }

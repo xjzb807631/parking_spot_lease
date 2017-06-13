@@ -3,6 +3,7 @@ package com.example.acer.parking;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -22,6 +23,11 @@ public class parking_place extends AppCompatActivity {
     {
         Intent intent_parking_place_to_inserting_spot=new Intent(parking_place.this,inserting_spot.class);
     }
+    void doPost_on_spot()
+    {
+        Intent intent_to_offer_or_proposal=new Intent(parking_place.this,offer_or_proposal.class);
+        startActivity(intent_to_offer_or_proposal);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +38,9 @@ public class parking_place extends AppCompatActivity {
         adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,contactsList);
         contactsView.setAdapter(adapter);
         String user_id=Handlers.clientAccountHandler.user.userID;
-        Handlers.clientSpotHandler.GetSpotByUser(Integer.valueOf(user_id),contactsList,result);
+      //todo  Handlers.clientSpotHandler.GetSpotByUser(Integer.valueOf(user_id),contactsList,result);
+      //todo  contactsView.setOnItemClickListener(view->doPost_on_spot());
+
 
         Button plusing_spot_button=(Button) findViewById(R.id.plusing_spot);
         plusing_spot_button.setOnClickListener(view->doPost_inserting_spot());
