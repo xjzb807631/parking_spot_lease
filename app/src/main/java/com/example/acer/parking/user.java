@@ -5,9 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
 
-import client.ClientAccountHandler;
-import data.Account;
-
 public class user extends AppCompatActivity {
 
     private Button mLicensePlateButton;
@@ -17,7 +14,7 @@ public class user extends AppCompatActivity {
     private Button mSearchButton;
     void doPost_LicensePlate()
     {
-        Intent intent_user_to_LicensePlate = new Intent(user.this,license_plate.class) ;
+        Intent intent_user_to_LicensePlate = new Intent(user.this,searching_parking_place.class) ;
         startActivity(intent_user_to_LicensePlate);
     }
     void doPost_Order()
