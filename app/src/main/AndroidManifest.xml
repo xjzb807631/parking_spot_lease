@@ -30,7 +30,9 @@
         <activity android:name=".renting_out_order" />
         <activity android:name=".inserting_spot" />
         <activity android:name=".creating_offer" />
-        <activity android:name=".creating_proposal"></activity>
+        <activity android:name=".creating_proposal" />
+        <activity android:name=".inserting_offer" />
+        <activity android:name=".inserting_proposal"></activity>
     </application>
 
 </manifest>

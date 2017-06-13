@@ -9,6 +9,8 @@ public class order extends AppCompatActivity {
 
     Button renting_in_button;
     Button renting_out_button;
+    Button creating_offer_button;
+    Button creating_proposal_button;
 
     void doPost_renting_in()
     {
