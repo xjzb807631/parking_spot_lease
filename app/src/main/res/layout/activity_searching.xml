@@ -44,7 +44,7 @@
         android:layout_marginLeft="25dp"
         android:textSize="25sp"
         android:id="@+id/district" />
-    <EditText
+    <Spinner
         android:layout_marginTop="145dp"
         android:layout_width="120dp"
         android:layout_height="40dp"
@@ -106,7 +106,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/block_name" />
 
-    <EditText
+    <Spinner
         android:layout_marginTop="210dp"
         android:layout_width="120dp"
         android:layout_height="40dp"
@@ -128,7 +128,7 @@
         android:layout_alignLeft="@+id/province"
         android:layout_alignStart="@+id/province" />
 
-    <EditText
+    <Spinner
         android:layout_marginTop="25dp"
         android:layout_width="120dp"
         android:layout_height="40dp"
@@ -137,18 +137,17 @@
         android:layout_below="@+id/edit_province"
         android:layout_alignLeft="@+id/edit_province"
         android:layout_alignStart="@+id/edit_province"
-        android:layout_alignRight="@+id/edit_province"
-        android:layout_alignEnd="@+id/edit_province" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
-    <EditText
-        android:layout_width="150dp"
+    <Spinner
+        android:layout_width="200dp"
         android:layout_marginLeft="22dp"
         android:layout_height="40dp"
         android:id="@+id/edit_province"
         android:background="@drawable/input_box"
         android:layout_alignTop="@+id/province"
         android:layout_toRightOf="@+id/confirm"
-        android:layout_toEndOf="@+id/confirm"
         android:layout_marginStart="22dp" />
 
 </RelativeLayout>
