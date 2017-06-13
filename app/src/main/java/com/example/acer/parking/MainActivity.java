@@ -22,11 +22,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
      //   SQLConnection.MYSQLPORT= String.valueOf(27322);
      //   SQLConnection.URLSTR="jdbc:mysql://i1n7106689.iask.in:";
-        AccountHandler handler1=new AccountHandler();
-        handler1.start();
-        SpotHandler handler2=new SpotHandler();
-        handler2.start();
 
+        Handlers.start();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 

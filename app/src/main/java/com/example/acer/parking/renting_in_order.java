@@ -3,11 +3,14 @@ package com.example.acer.parking;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import java.sql.Timestamp;
+
 import data.*;
 
 public class renting_in_order extends AppCompatActivity {
 
-    float amount=new float();
+    float amount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
