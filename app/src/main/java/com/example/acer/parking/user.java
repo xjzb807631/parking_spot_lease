@@ -43,7 +43,7 @@ public class user extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_load);
+        setContentView(R.layout.activity_user);
 
         mLicensePlateButton=(Button) findViewById(R.id.my_license_plate);
         mOrderButton=(Button) findViewById(R.id.my_order);

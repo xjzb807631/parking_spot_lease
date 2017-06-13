@@ -17,6 +17,8 @@ public class parking_place extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parking_place);
 
+
+
         Button plusing_spot_button=(Button) findViewById(R.id.plusing_spot);
         plusing_spot_button.setOnClickListener(view->doPost_inserting_spot());
 
