@@ -17,18 +17,31 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginLeft="65dp"
-        android:layout_marginStart="65dp"
-        android:layout_marginTop="86dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="50dp"
         android:id="@+id/renting_out_order" />
 
     <Button
         android:text="租进订单"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="130dp"
         android:id="@+id/renting_in_order"
-        android:layout_below="@+id/renting_out_order"
-        android:layout_alignLeft="@+id/renting_out_order"
-        android:layout_alignStart="@+id/renting_out_order" />
+        android:layout_marginLeft="50dp"/>
+
+    <Button
+        android:text="发布offer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="210dp"
+        android:id="@+id/create_offer" />
+
+    <Button
+        android:text="发布请求"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="290dp"
+        android:id="@+id/create_proposal" />
 </RelativeLayout>

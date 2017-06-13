@@ -31,28 +31,21 @@
         android:text="省"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="25dp"
         android:textSize="25sp"
         android:id="@+id/province" />
-    <EditText
-        android:layout_marginTop="50dp"
-        android:layout_width="150dp"
-        android:layout_marginLeft="160dp"
-        android:layout_height="40dp"
-        android:id="@+id/edit_province"
-        android:background="@drawable/input_box"/>
 
     <TextView
         android:text="区"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="145dp"
         android:layout_marginLeft="25dp"
         android:textSize="25sp"
         android:id="@+id/district" />
     <EditText
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="145dp"
         android:layout_width="120dp"
         android:layout_height="40dp"
         android:id="@+id/edit_district"
@@ -123,5 +116,39 @@
         android:layout_alignEnd="@+id/edit_stop_time"
         android:layout_alignLeft="@+id/edit_stop_time"
         android:layout_alignStart="@+id/edit_stop_time" />
+
+    <TextView
+        android:text="市"
+        android:textSize="25sp"
+        android:layout_marginTop="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_province"
+        android:id="@+id/city"
+        android:layout_alignLeft="@+id/province"
+        android:layout_alignStart="@+id/province" />
+
+    <EditText
+        android:layout_marginTop="25dp"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:background="@drawable/input_box"
+        android:id="@+id/edit_city_name"
+        android:layout_below="@+id/edit_province"
+        android:layout_alignLeft="@+id/edit_province"
+        android:layout_alignStart="@+id/edit_province"
+        android:layout_alignRight="@+id/edit_province"
+        android:layout_alignEnd="@+id/edit_province" />
+
+    <EditText
+        android:layout_width="150dp"
+        android:layout_marginLeft="22dp"
+        android:layout_height="40dp"
+        android:id="@+id/edit_province"
+        android:background="@drawable/input_box"
+        android:layout_alignTop="@+id/province"
+        android:layout_toRightOf="@+id/confirm"
+        android:layout_toEndOf="@+id/confirm"
+        android:layout_marginStart="22dp" />
 
 </RelativeLayout>

@@ -11,32 +11,15 @@
     tools:context="com.example.acer.parking.inserting_spot">
 
     <TextView
-        android:text="账号"
-        android:textSize="25sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="50dp"
-        android:id="@+id/user_id" />
-    <EditText
-        android:layout_marginTop="50dp"
-        android:layout_marginLeft="160dp"
-        android:layout_width="180dp"
-        android:layout_height="40dp"
-        android:background="@drawable/input_box"
-        android:id="@+id/edit_user_id" />
-
-    <TextView
         android:text="地址"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="25sp"
         android:textSize="25sp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="50dp"
         android:id="@+id/address" />
     <EditText
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="50dp"
         android:layout_marginLeft="160dp"
         android:layout_width="180dp"
         android:layout_height="40dp"
@@ -49,11 +32,11 @@
         android:layout_marginLeft="25dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="190dp"
+        android:layout_marginTop="120dp"
         android:id="@+id/description" />
     <EditText
         android:inputType="text"
-        android:layout_marginTop="190dp"
+        android:layout_marginTop="120dp"
         android:layout_marginLeft="160dp"
         android:layout_width="180dp"
         android:layout_height="40dp"
@@ -65,11 +48,11 @@
         android:textSize="25sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="260dp"
+        android:layout_marginTop="190dp"
         android:layout_marginLeft="25dp"
         android:id="@+id/category" />
     <EditText
-        android:layout_marginTop="260dp"
+        android:layout_marginTop="190dp"
         android:layout_marginLeft="160dp"
         android:layout_width="180dp"
         android:layout_height="40dp"
@@ -84,10 +67,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="320dp"
+        android:layout_marginTop="260dp"
         android:id="@+id/size" />
     <EditText
-        android:layout_marginTop="320dp"
+        android:layout_marginTop="260dp"
         android:layout_marginLeft="160dp"
         android:layout_width="180dp"
         android:layout_height="40dp"
@@ -100,10 +83,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="390dp"
+        android:layout_marginTop="330dp"
         android:id="@+id/spot_local_ref" />
     <EditText
-        android:layout_marginTop="390dp"
+        android:layout_marginTop="330dp"
         android:layout_marginLeft="160dp"
         android:layout_width="180dp"
         android:layout_height="40dp"
@@ -116,12 +99,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="440dp"
+        android:layout_marginTop="380dp"
         android:id="@+id/confirm" />
 
     <Button
         android:text="取消"
-        android:layout_marginTop="440dp"
+        android:layout_marginTop="380dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button2"
@@ -130,4 +113,5 @@
         android:layout_alignStart="@+id/edit_spot_local_ref"
         android:layout_marginLeft="15dp"
         android:layout_marginStart="15dp" />
+
 </RelativeLayout>

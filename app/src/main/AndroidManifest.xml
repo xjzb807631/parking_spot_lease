@@ -28,7 +28,9 @@
         <activity android:name=".user" />
         <activity android:name=".renting_in_order" />
         <activity android:name=".renting_out_order" />
-        <activity android:name=".inserting_spot"></activity>
+        <activity android:name=".inserting_spot" />
+        <activity android:name=".creating_offer" />
+        <activity android:name=".creating_proposal"></activity>
     </application>
 
 </manifest>
