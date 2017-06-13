@@ -20,8 +20,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
-        SQLConnection.MYSQLPORT= String.valueOf(27322);
-        SQLConnection.URLSTR="jdbc:mysql://i1n7106689.iask.in:";
+     //   SQLConnection.MYSQLPORT= String.valueOf(27322);
+     //   SQLConnection.URLSTR="jdbc:mysql://i1n7106689.iask.in:";
         AccountHandler handler1=new AccountHandler();
         handler1.start();
         SpotHandler handler2=new SpotHandler();

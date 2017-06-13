@@ -37,6 +37,7 @@ public class register extends AppCompatActivity
         String userPwdCheck = mPwdCheck.getText().toString().trim();
         if(userPwd.equals(userPwdCheck)==true)
         {
+            result=new StringBuffer();
             User user = new User(userName, nickName, realName, identityNumber, weChat, userPwd);
             ClientAccountHandler clientAccountHandler = new ClientAccountHandler();
             clientAccountHandler.register(user,result);
@@ -68,7 +69,6 @@ public class register extends AppCompatActivity
 
         Button mSureButton = (Button) findViewById(R.id.confirm);
         Button mCancelButton = (Button) findViewById(R.id.cancel);
-
         mSureButton.setOnClickListener(view->doPost_sure());
 
         mCancelButton.setOnClickListener(view->doPost_cancel());
