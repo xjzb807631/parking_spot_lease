@@ -31,8 +31,8 @@ public class parking_place extends AppCompatActivity {
         ListView contactsView=(ListView) findViewById(R.id.list_view);
         adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,contactsList);
         contactsView.setAdapter(adapter);
-        ClientSpotHandler clientSpotHandler=new ClientSpotHandler();
-        clientSpotHandler.GetSpotByUser(user_id,contactsList,result);
+        String user_id=Handlers.clientAccountHandler.user.userID;
+        Handlers.clientSpotHandler.GetSpotByUser(Integer.valueOf(user_id),contactsList,result);
 
         Button plusing_spot_button=(Button) findViewById(R.id.plusing_spot);
         plusing_spot_button.setOnClickListener(view->doPost_inserting_spot());

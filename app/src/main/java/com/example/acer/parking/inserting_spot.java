@@ -46,12 +46,12 @@ public class inserting_spot extends AppCompatActivity {
         String userName=pref.getString("userName","");
         String user_id=Handlers.clientAccountHandler.user.userID;
 
-        //Spot spot=new Spot(Integer.valueOf(user_id),address,spot_local_ref,description,category,size);
+        Spot spot=new Spot(Integer.valueOf(user_id),address,spot_local_ref,description,category,size);
 
         Button m_confirm_button=(Button) findViewById(R.id.confirm);
         Button m_cancel_button=(Button) findViewById(R.id.cancel);
 
-        //m_confirm_button.setOnClickListener(view->doPost_confirm_on_inserting_spot(spot));
+        m_confirm_button.setOnClickListener(view->doPost_confirm_on_inserting_spot(spot));
 
     }
 }
