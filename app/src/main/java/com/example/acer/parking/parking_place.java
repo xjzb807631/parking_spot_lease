@@ -3,6 +3,7 @@ package com.example.acer.parking;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -33,6 +34,12 @@ public class parking_place extends AppCompatActivity {
         contactsView.setAdapter(adapter);
         String user_id=Handlers.clientAccountHandler.user.userID;
         Handlers.clientSpotHandler.GetSpotByUser(Integer.valueOf(user_id),contactsList,result);
+        contactsView.setOnItemClickListener(view->doPost_on_spot());
+        void doPost_on_spot()
+    {
+        Intent intent_to_offer_or_proposal=new Intent(parking_place.this,offer_or_proposal.class);
+        startActivity(intent_to_offer_or_proposal);
+    }
 
         Button plusing_spot_button=(Button) findViewById(R.id.plusing_spot);
         plusing_spot_button.setOnClickListener(view->doPost_inserting_spot());
