@@ -28,6 +28,7 @@ public class searching extends AppCompatActivity {
 
     private Spinner mProvince;
     private Spinner mDistrict;
+    private Spinner mCity;
     private Spinner mBlock;
     private EditText mStartTime;
     private EditText mStopTime;
@@ -48,6 +49,7 @@ public class searching extends AppCompatActivity {
     {
         String m_province=mProvince.getSelectedItem().toString().trim();
         String m_district=mDistrict.getSelectedItem().toString().trim();
+        String m_city=mCity.getSelectedItem().toString().trim();
         String m_block=mBlock.getSelectedItem().toString().trim();
         String m_start_time=mStartTime.getText().toString().trim();
         String m_stop_time=mStopTime.getText().toString().trim();
@@ -83,6 +85,7 @@ public class searching extends AppCompatActivity {
 
         mProvince=(Spinner) findViewById(R.id.edit_province);
         mDistrict=(Spinner) findViewById(R.id.edit_district);
+        mCity=(Spinner) findViewById(R.id.edit_city_name);
         mBlock=(Spinner) findViewById(R.id.edit_block_name);
         mStartTime=(EditText) findViewById(R.id.edit_start_time);
         mStopTime=(EditText) findViewById(R.id.edit_stop_time);
