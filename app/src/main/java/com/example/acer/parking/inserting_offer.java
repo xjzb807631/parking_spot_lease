@@ -1,5 +1,6 @@
 package com.example.acer.parking;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.EditText;
@@ -14,7 +15,9 @@ public class inserting_offer extends AppCompatActivity {
     StringBuffer result=new StringBuffer();
 
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inserting_offer);
 
@@ -25,9 +28,11 @@ public class inserting_offer extends AppCompatActivity {
         String m_start_time=start_time.getText().toString().trim();
         String m_stop_time=stop_time.getText().toString().trim();
         String m_amount=amount.getText().toString().trim();
-        String spot_id=
+       //todo  String spot_id=
 
-        Order order=new Order(m_start_time,m_stop_time,spot_id,amount);
-        Handlers.clientMainHandler.createOffer(order,result);
+       //todo Order order=new Order(m_start_time,m_stop_time,spot_id,amount);
+        //todo Handlers.clientMainHandler.createOffer(order,result);
+       //todo Intent intent_inserting_offer_to_renting_out_order=new Intent(inserting_offer.this,renting_out_order.class);
+       // todo startActivity(intent_inserting_offer_to_renting_out_order);
     }
 }

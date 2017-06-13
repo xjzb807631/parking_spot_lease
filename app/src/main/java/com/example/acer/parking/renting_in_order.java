@@ -24,7 +24,7 @@ public class renting_in_order extends AppCompatActivity {
         String m_start_time=intent.getStringExtra("m_start_time");
         String m_stop_time=intent.getStringExtra("m_stop_time");
 
-        Order order=new Order(m_start_time,m_stop_time,spot,amount);
+     //todo   Order order=new Order(m_start_time,m_stop_time,spot,amount);
 
     }
 }

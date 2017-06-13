@@ -15,7 +15,8 @@ public class creating_offer extends AppCompatActivity {
     StringBuffer result=new StringBuffer();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+
+   protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_creating_offer);
 
@@ -23,6 +24,6 @@ public class creating_offer extends AppCompatActivity {
         adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,contactsList);
         contactsView.setAdapter(adapter);
         String user_id=Handlers.clientAccountHandler.user.userID;
-        Handlers.clientSpotHandler.GetSpotByUser(Integer.valueOf(user_id),contactsList,result);
+      //todo  Handlers.clientSpotHandler.GetSpotByUser(Integer.valueOf(user_id),contactsList,result);
     }
 }

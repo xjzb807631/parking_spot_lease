@@ -25,8 +25,8 @@ public class inserting_proposal extends AppCompatActivity {
         String m_start_time=start_time.getText().toString().trim();
         String m_stop_time=stop_time.getText().toString().trim();
         String m_amount=amount.getText().toString().trim();
-        String spot_id= ;
-        Order order=new Order(m_start_time,m_stop_time,spot_id,amount);
-        Handlers.clientMainHandler.createProposal(order,result);
+       //todo String spot_id= ;
+      //todo  Order order=new Order(m_start_time,m_stop_time,spot_id,amount);
+        //  todo Handlers.clientMainHandler.createProposal(order,result);
     }
 }
