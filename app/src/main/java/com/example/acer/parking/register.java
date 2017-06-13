@@ -1,5 +1,6 @@
 package com.example.acer.parking;
 
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
@@ -39,6 +40,9 @@ public class register extends AppCompatActivity
             User user = new User(userName, nickName, realName, identityNumber, weChat, userPwd);
             ClientAccountHandler clientAccountHandler = new ClientAccountHandler();
             clientAccountHandler.register(user,result);
+            SharedPreferences.Editor editor=getSharedPreferences("data",MODE_PRIVATE).edit();
+            editor.putString("userName","userName");
+            editor.apply();
             Intent intent_register_to_personal_information=new Intent(register.this,personal_information.class);
             startActivity(intent_register_to_personal_information);
         }

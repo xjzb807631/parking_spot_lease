@@ -21,11 +21,11 @@ import client.ClientSpotHandler;
 
 public class searching extends AppCompatActivity {
 
-    private Spinner mProvinceSpinner;
-    private Spinner mDistrictSpinner;
-    private Spinner mBlockSpinner;
-    private Spinner mStartTimeSpinner;
-    private Spinner mStopTimeSpinner;
+    private EditText mProvince;
+    private EditText mDistrict;
+    private EditText mBlock;
+    private EditText mStartTime;
+    private EditText mStopTime;
 
     private ArrayAdapter<String> province_adapter;
     private ArrayAdapter<String> district_adapter;
@@ -58,11 +58,11 @@ public class searching extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_searching);
 
-        mProvinceSpinner=(Spinner) findViewById(R.id.province_spinner);
-        mDistrictSpinner=(Spinner) findViewById(R.id.district_spinner);
-        mBlockSpinner=(Spinner) findViewById(R.id.block_name_spinner);
-        mStartTimeSpinner=(Spinner) findViewById(R.id.start_time_spinner);
-        mStopTimeSpinner=(Spinner) findViewById(R.id.stop_time_spinner);
+        mProvince=(EditText) findViewById(R.id.edit_province);
+        mDistrict=(EditText) findViewById(R.id.edit_district);
+        mBlock=(EditText) findViewById(R.id.edit_block_name);
+        mStartTime=(EditText) findViewById(R.id.edit_start_time);
+        mStopTime=(EditText) findViewById(R.id.edit_stop_time);
 
         province_adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,province_contactsList);
         district_adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,district_contactsList);
