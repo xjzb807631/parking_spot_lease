@@ -22,9 +22,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
-import client.ClientMainHandler;
-import client.ClientSpotHandler;
-
 public class searching extends AppCompatActivity {
 
     ArrayAdapter<String> adapter;
